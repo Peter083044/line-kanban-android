@@ -1,0 +1,4 @@
+// 根工程的工具链版本集中管理（AGP 8.5.2，要求 JDK 17）
+plugins {
+    id 'com.android.application' version '8.5.2' apply false
+}
