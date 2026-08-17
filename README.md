@@ -17,14 +17,14 @@
 
 你**不需要**在本机装 Android Studio / JDK / SDK。把仓库推到 GitHub，由 GitHub Actions 免费云端编译 APK：
 
-1. 把本项目（含 `android-app/` 目录）推送到一个 GitHub 仓库。
+1. 把本工程（仓库根即安卓工程）推送到一个 GitHub 仓库。
 2. 打开仓库 `Actions` 标签 → 找 **Build Kanban APK** 工作流 → 点 `Run workflow`。
-   （之后只要改动 `android-app/**`，也会自动触发构建。）
+   （之后只要改动工程文件，也会自动触发构建。）
 3. 等约 3–5 分钟显示绿色 ✓，展开 `Artifacts`：
    - `app-debug-apk` → `app-debug.apk`（**直接用，侧载首选**）
    - `app-release-apk` → `app-release-unsigned.apk`（未签名 release，需自行对齐/签名后才能上架商店；侧载同样可用）
 
-> 工作流定义在 `android-app/.github/workflows/build-apk.yml`：
+> 工作流定义在 `.github/workflows/build-apk.yml`：
 > 用 `setup-java@17` + `gradle/gradle-build-action`（自带 Gradle 8.9），
 > 因此**不依赖本地 `gradle-wrapper.jar`**，仓库保持轻量。
 
@@ -33,13 +33,13 @@
 ## 二、本地构建（已有 Android 环境时）
 
 ### 方式 A：Android Studio
-1. `File → Open` 选择本 `android-app/` 目录，等待 Gradle 同步。
+1. `File → Open` 选择本工程目录，等待 Gradle 同步。
 2. `Build → Build Bundle(s) / APK(s) → Build APK(s)`。
 3. 产物：`app/build/outputs/apk/debug/app-debug.apk`。
 
 ### 方式 B：命令行（需本地有 JDK17 + Android SDK）
 ```bash
-cd android-app
+cd 工程目录
 ./gradlew assembleDebug        # Linux/Mac
 gradlew.bat assembleDebug      # Windows
 ```
@@ -63,7 +63,7 @@ gradlew.bat assembleDebug      # Windows
 只改一处即可，无需动 Java：
 
 ```
-android-app/app/src/main/res/values/strings.xml
+app/src/main/res/values/strings.xml
     → <string name="kanban_url">https://你的新地址</string>
 ```
 
