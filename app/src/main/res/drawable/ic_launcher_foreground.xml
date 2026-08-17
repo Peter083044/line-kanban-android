@@ -2,27 +2,11 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
-    android:viewportWidth="108"
-    android:viewportHeight="108">
-    <!-- White foreground: three columns and one card -->
-    <!-- Left column -->
-    <path
-        android:fillColor="#FFFFFFFF"
-        android:pathData="M12,18 H34 V90 H12 Z" />
-    <!-- Middle column -->
-    <path
-        android:fillColor="#FFFFFFFF"
-        android:pathData="M40,26 H62 V90 H40 Z" />
-    <!-- Right column -->
-    <path
-        android:fillColor="#FFFFFFFF"
-        android:pathData="M68,34 H90 V90 H68 Z" />
-    <!-- Card in left column (accent) -->
-    <path
-        android:fillColor="#FF1E88E5"
-        android:pathData="M16,26 H30 V40 H16 Z" />
-    <!-- Card inner (white) to create a notch / accent -->
-    <path
-        android:fillColor="#FFFFFFFF"
-        android:pathData="M18,30 H28 V36 H18 Z" />
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+  <!-- White checklist / task icon (foreground) -->
+  <path
+      android:fillColor="#FFFFFFFF"
+      android:pathData="M3,13h2v6H3v-6zM7,10l2,2 6-6 1.41,1.41L9,13.83 5.59,10.41 7,10zM10,5h11v2H10zM10,9h11v2H10z" />
 </vector>
