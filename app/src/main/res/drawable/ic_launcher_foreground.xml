@@ -4,8 +4,25 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Simple placeholder foreground: a filled circle. Replace pathData with your actual icon vector if desired. -->
+    <!-- White foreground: three columns and one card -->
+    <!-- Left column -->
     <path
-        android:fillColor="#FF000000"
-        android:pathData="M54,12a42,42 0 1,0 0,84a42,42 0 1,0 0,-84z"/>
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,18 H34 V90 H12 Z" />
+    <!-- Middle column -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M40,26 H62 V90 H40 Z" />
+    <!-- Right column -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M68,34 H90 V90 H68 Z" />
+    <!-- Card in left column (accent) -->
+    <path
+        android:fillColor="#FF1E88E5"
+        android:pathData="M16,26 H30 V40 H16 Z" />
+    <!-- Card inner (white) to create a notch / accent -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M18,30 H28 V36 H18 Z" />
 </vector>
