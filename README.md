@@ -71,7 +71,7 @@ android-app/app/src/main/res/values/strings.xml
 
 ## 五、技术要点
 
-- `minSdk 24`（Android 7.0）、`targetSdk/compileSdk 34`，覆盖绝大多数平板。
+- `minSdk 26`（Android 8.0）、`targetSdk/compileSdk 34`，覆盖绝大多数平板。
 - 明文流量已禁用（`usesCleartextTraffic=false`），看板必须是 **HTTPS**（CloudStudio 分享链接已是 HTTPS，符合）。
 - WebView 已启用 JS、`DomStorageEnabled`（localStorage 持久化）、硬件加速。
 - 自适应图标（foreground vector + 蓝色背景），无需另行准备多尺寸 PNG。

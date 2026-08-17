@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.workbuddy.kanban"
-        minSdk 24          // Android 7.0，覆盖绝大多数仍在用的平板
+        minSdk 26          // Android 8.0：自适应图标即可，无需位图启动图标（现代工厂平板均满足）
         targetSdk 34
         versionCode 1
         versionName "1.0"
