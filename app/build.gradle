@@ -1,0 +1,37 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.workbuddy.kanban'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.workbuddy.kanban"
+        minSdk 26          // Android 8.0：自适应图标即可，无需位图启动图标（现代工厂平板均满足）
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            // 调试期直接用 release 也能侧载；如需签名可在此配置 signingConfig
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        viewBinding false
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.webkit:webkit:1.9.0'   // 保障低版本 WebView 内核能力
+}
