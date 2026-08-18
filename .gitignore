@@ -11,3 +11,6 @@ captures/
 
 # 不提交 wrapper jar（CI / Android Studio 会自动下载）
 !gradle/wrapper/gradle-wrapper.jar
+
+# 签名密钥库由 Secrets 注入，绝不入库
+*.keystore
