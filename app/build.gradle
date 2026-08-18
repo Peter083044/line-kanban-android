@@ -16,14 +16,19 @@ android {
 
     // 固定签名密钥库：确保每次构建（含 debug/CI）使用同一签名，
     // 避免旧版 APK 与新版「签名不一致」导致手机重装失败。
-    // 注意：kanban.keystore 已随仓库提交，密码 kanban123 / alias kanban，
-    // 仅适合内网侧载，切勿用于上架应用市场。
+    // 密钥库不再随仓库提交，改为 GitHub Actions Secrets 注入：
+    //   - KEYSTORE_BASE64   : keystore 文件的 base64（workflow 解码为 app/kanban.keystore）
+    //   - KEYSTORE_PASSWORD : 密钥库密码
+    //   - KEY_ALIAS         : 别名
+    //   - KEY_PASSWORD      : 私钥密码
+    // 本地构建如需签名，可手动放置 app/kanban.keystore 并设置同名环境变量；
+    // 该密钥仅适合内网侧载，切勿用于上架应用市场。
     signingConfigs {
         release {
             storeFile file("kanban.keystore")
-            storePassword "kanban123"
-            keyAlias "kanban"
-            keyPassword "kanban123"
+            storePassword System.getenv("KEYSTORE_PASSWORD") ?: "kanban123"
+            keyAlias System.getenv("KEY_ALIAS") ?: "kanban"
+            keyPassword System.getenv("KEY_PASSWORD") ?: "kanban123"
         }
     }
 
